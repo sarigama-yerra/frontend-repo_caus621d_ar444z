@@ -1,0 +1,112 @@
+/* FINDLOKO Global Styles */
+/* Typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --brand: #EA7A22;
+  --brand-hover: #c86112;
+  --dark: #090909;
+  --light: #ffffff;
+  --soft: #F7F4EF;
+}
+
+html, body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/******** Background texture (subtle, original) ********/
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(234,122,34,0.03), transparent 50%),
+    radial-gradient(900px 500px at 90% 20%, rgba(27,27,27,0.03), transparent 50%),
+    radial-gradient(700px 300px at 30% 80%, rgba(234,122,34,0.02), transparent 60%),
+    linear-gradient(180deg, rgba(9,9,9,0.02), rgba(9,9,9,0.00));
+  pointer-events: none;
+  z-index: 0;
+}
+
+/******** Card look ********/
+.card-ghost {
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: saturate(120%) blur(6px);
+}
+
+/******** Smooth transitions ********/
+* {
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out, box-shadow 150ms ease-out, transform 150ms ease-out;
+}
+
+/******** Header shadow ********/
+.header-shadow {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+}
+
+/******** Pills ********/
+.pill {
+  border-radius: 40px !important;
+}
+
+/******** Brand button ********/
+.btn-brand {
+  background-color: var(--brand) !important;
+  color: white !important;
+}
+.btn-brand:hover { background-color: var(--brand-hover) !important; }
+
+/******** Icon ring ********/
+.icon-ring {
+  border-radius: 9999px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+
+/******** Utility helpers ********/
+.max-w-screen-2xl { max-width: 1440px; }
+
+/******** Responsive tweaks for headings ********/
+@media (max-width: 1024px) {
+  .hero-title { font-size: 2.25rem; line-height: 1.1; }
+}
+@media (min-width: 1025px) {
+  .hero-title { font-size: 3rem; line-height: 1.05; }
+}
+
+/******** DaisyUI card content spacing ********/
+.card-body-compact { padding: 1rem 1.25rem; }
+
+/******** Mini sparkline styles ********/
+.sparkline path { stroke-width: 2; fill: none; }
+
+/******** Timeline ********/
+.timeline {
+  position: relative;
+  padding-left: 1rem;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(0,0,0,0.08);
+}
+.timeline-item {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: 0.3rem;
+  width: 10px;
+  height: 10px;
+  background: var(--brand);
+  border-radius: 9999px;
+}
